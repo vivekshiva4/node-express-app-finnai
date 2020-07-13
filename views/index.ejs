@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Finn Ai Assessmet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        $("form#createUserForm").on('submit', function(e){
+            e.preventDefault();
+            let email = $('input[name=email]').val();
+            let firstName = $('input[name=firstName]').val();
+            let lastName = $('input[name=lastName]').val();
+            let data = {
+                email : email,
+                firstName: firstName,
+                lastName: lastName
+            }
+            $.ajax({
+                type: 'post',
+                url: '/user',
+                data: data,
+            }).done(function(data){
+                $("form#createUserForm")[0].reset();
+                alert(data.message);
+                location.reload()
+            }).fail(function (data) {
+                alert("Check the required fields")
+            })
+
+        });
+    });
+</script>
+<div class="container">
+    <h2>Create User</h2>
+    <form class="form-horizontal" id="createUserForm">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">First Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstName" placeholder="Enter first name" name="firstName" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Last Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastName" placeholder="Enter last name" name="lastName" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">create</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <h2>Users List</h2>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#uuid</th>
+            <th scope="col">Email</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% users.forEach(function (user) { %>
+            <tr>
+                <th scope="row"><%= user.id %></th>
+                <td><%= user.email %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.first_name %></td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
