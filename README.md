@@ -91,7 +91,7 @@ Saves a user and returns the user obj.
 Request:
 
 ```bash
-curl http://localhost:5000/user -X POST -d '{ "firstName": "vivek", "lastName": "shiva" , "email": "vivekshiva4@gmail.com"}' -H "Content-Type: application/json"
+curl http://localhost:5000/user -X POST -d '{ "firstName": "vi", "lastName": "shiva" , "email": "vivekshiva4@gmail.com"}' -H "Content-Type: application/json"
 ```
 
 
