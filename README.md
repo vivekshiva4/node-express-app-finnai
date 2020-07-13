@@ -11,6 +11,12 @@ npm install
 npm start
 ```
 
+Test using Jest
+-------------------------------
+The run the unit tests
+```bash
+npm test
+```
 
 API
 -------------------------------
