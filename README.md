@@ -7,9 +7,11 @@ skeleton.
 To install and start the node server:
 
 ```bash
+cd node-express-app-finnai
 npm install
 npm start
 ```
+web and server is served at http://localhost:5000/.
 
 Test using Jest
 -------------------------------
@@ -20,9 +22,6 @@ npm test
 
 API
 -------------------------------
-
-web and server is served at http://localhost:5000/.
-
 The API provides the following methods:
 
 
