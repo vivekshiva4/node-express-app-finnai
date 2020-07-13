@@ -15,7 +15,7 @@ web and server is served at http://localhost:5000.
 
 Test using Jest
 -------------------------------
-To run the unit tests
+To run the unit tests run the following command and it includes 1 Testsuite and 7 Testcases
 ```bash
 npm test
 ```
