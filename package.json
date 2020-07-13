@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/nodemon app.js --exec babel-node --",
-    "test": "jest"
+    "test": "jest --forceExit"
   },
   "author": "vivek",
   "license": "ISC",
