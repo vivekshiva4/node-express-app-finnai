@@ -34,7 +34,7 @@ Returns a JSON array of users.
 Request:
 
 ```bash
-curl http://localhost:5000/user/
+curl http://localhost:5000/user
 ```
 
 Response:
@@ -57,7 +57,7 @@ Response:
 ]
 ```
 
-`GET /user/:id/`
+`GET /user/:id`
 ---------------------
 
 Returns a JSON object for a user with given `id`.
@@ -65,7 +65,7 @@ Returns a JSON object for a user with given `id`.
 Request:
 
 ```bash
-curl http://localhost:5000/user/e5cb4d0d-d1d3-4a41-bc9d-fc1e63af1977/
+curl http://localhost:5000/user/e5cb4d0d-d1d3-4a41-bc9d-fc1e63af1977
 ```
 
 Response:
@@ -84,7 +84,7 @@ Response:
 ```
 
 
-`POST /user/` 
+`POST /user` 
 -------------------------------------------
 
 Saves a user and returns the user obj.
@@ -92,7 +92,7 @@ Saves a user and returns the user obj.
 Request:
 
 ```bash
-curl http://localhost:5000/user/ -X POST -d '{ "firstName": "vivek", "lastName": "shiva" , "email": "vivekshiva4@gmail.com}' -H "Content-Type: application/json"
+curl http://localhost:5000/user -X POST -d '{ "firstName": "vivek", "lastName": "shiva" , "email": "vivekshiva4@gmail.com}' -H "Content-Type: application/json"
 ```
 
 
